@@ -17,12 +17,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.JTabbedPane;
-import javax.swing.plaf.basic.BasicComboPopup;
 import javax.swing.text.BadLocationException;
 import logictable.ayuda.Ayuda;
 import logictable.modelo.ArchivosLtt;
@@ -68,7 +65,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
         miNuevo = new javax.swing.JMenuItem();
         miAbrir = new javax.swing.JMenuItem();
         miGuardar = new javax.swing.JMenuItem();
-        miGuardarcomo = new javax.swing.JMenuItem();
         miImprimir = new javax.swing.JMenuItem();
         miCerrar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -76,6 +72,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         pnlTabla.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentRemoved(java.awt.event.ContainerEvent evt) {
@@ -188,6 +185,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(miNuevo);
 
+        miAbrir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         miAbrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/folder_16.png"))); // NOI18N
         miAbrir.setText("Abrir");
         miAbrir.addActionListener(new java.awt.event.ActionListener() {
@@ -197,6 +195,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(miAbrir);
 
+        miGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         miGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/save_16.png"))); // NOI18N
         miGuardar.setText("Guardar");
         miGuardar.setEnabled(false);
@@ -206,15 +205,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(miGuardar);
-
-        miGuardarcomo.setText("Guardar Como");
-        miGuardarcomo.setEnabled(false);
-        miGuardarcomo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miGuardarcomoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(miGuardarcomo);
 
         miImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/print_16.png"))); // NOI18N
         miImprimir.setText("Imprimir");
@@ -226,6 +216,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(miImprimir);
 
+        miCerrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         miCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/delete_16.png"))); // NOI18N
         miCerrar.setText("Cerrar");
         miCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -239,6 +230,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Editar");
 
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/cut.png"))); // NOI18N
         jMenuItem7.setText("Cortar");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +240,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem7);
 
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/copy.png"))); // NOI18N
         jMenuItem8.setText("Copiar");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +250,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem8);
 
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/paste.png"))); // NOI18N
         jMenuItem9.setText("Pegar");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -279,6 +273,11 @@ public class VtnPrincipal extends javax.swing.JFrame {
                 jMenu3ActionPerformed(evt);
             }
         });
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        jMenuItem1.setText("Contenido");
+        jMenu3.add(jMenuItem1);
+
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -302,7 +301,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
             this.setContentPane(aux);
             this.setVisible(true);
             miGuardar.setEnabled(true);
-            miGuardarcomo.setEnabled(true);
             miImprimir.setEnabled(true);
             JPanel p=new JPanel();
 
@@ -328,12 +326,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_miGuardarActionPerformed
 
-    private void miGuardarcomoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miGuardarcomoActionPerformed
-        fc =new JFileChooser();
-        fc.setVisible(true);
-        fc.showDialog(this, "Guardar Como");
-    }//GEN-LAST:event_miGuardarcomoActionPerformed
-
     public JTabbedPane obtenerTabbedPane(){
         return pnlTabla;
     }
@@ -349,7 +341,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
                     aux.add(pnlBarraHerram,"North");
                     this.setContentPane(aux);
                     miGuardar.setEnabled(false);
-                    miGuardarcomo.setEnabled(false);
                     miImprimir.setEnabled(false);
             }
     }//GEN-LAST:event_pnlTablaComponentRemoved
@@ -414,13 +405,13 @@ public class VtnPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuItem miAbrir;
     private javax.swing.JMenuItem miCerrar;
     private javax.swing.JMenuItem miGuardar;
-    private javax.swing.JMenuItem miGuardarcomo;
     private javax.swing.JMenuItem miImprimir;
     private javax.swing.JMenuItem miNuevo;
     private javax.swing.JPanel pnlBarraHerram;
