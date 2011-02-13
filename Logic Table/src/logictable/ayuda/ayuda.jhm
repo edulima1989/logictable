@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<map version="1.0">
+        <mapID target="tema1"                    url="pages/page1.htm"/>
+        <mapID target="tema2"                 url="pages/page2.htm"/>
+        <mapID target="tema3"                    url="pages/page3.htm"/>
+        <mapID target="tema4"                    url="pages/page4.htm"/>
+        <mapID target="tema5"          url="pages/page5.htm"/>
+        <mapID target="tema6"    url="pages/page6.htm"/>
+        <mapID target="tema7"      url="pages/page7.htm"/>
+        <mapID target="tema8"                 url="pages/page8.htm"/>
+        <mapID target="tema9"               url="pages/page9.htm"/>
+        <mapID target="tema10"         url="pages/page10.htm"/>
+        <mapID target="tema11"        url="pages/page11.htm"/>
+        <mapID target="tema12"        url="pages/page12.htm"/>
+        <mapID target="tema13"       url="pages/page13.htm"/>
+        <mapID target="tema14"                 url="pages/page14.htm"/>
+        <mapID target="tema15"                  url="pages/page15.htm"/>
+        <mapID target="tema16"    url="pages/pag16.htm"/>
+        <mapID target="tema17"          url="pages/page17.htm"/>
+        <mapID target="tema18"          url="pages/page18.htm"/>
+        <mapID target="tema19"           url="pages/page19.htm"/>
+        <mapID target="tema20"         url="pages/page20.htm"/>
+        <mapID target="tema21"          url="pages/page21.htm"/>
+        <mapID target="tema22"    url="pages/page22.htm"/>
+        <mapID target="tema23"               url="pages/page23.htm"/>
+        <mapID target="tema24"    url="pages/page24.htm"/>
+        <mapID target="tema25"                 url="pages/page25.htm"/>
+        <mapID target="tema26"               url="pages/page26.htm"/>
+        <mapID target="tema27"                     url="pages/page27.htm"/>
+        <mapID target="tema28"                 url="pages/page28.htm"/>
+        <mapID target="index"                           url="pages/index.htm"/>
+
+
+
+
+
+
+
+
+
+        <mapID target="FolderClosed"                    url="images/FolderClosed.gif"/>
+        <mapID target="FolderOpened"                    url="images/FolderOpened.gif"/>
+        <mapID target="ItemIco"                         url="images/book.png"/>
+        <mapID target="ContentIco"                      url="images/bookBlue.png"/>
+ <!--       <mapID target="SearchIco"                       url="images/view.png"/> -->
+        <mapID target="PrintIco"                        url="images/printer.png"/>
+        <mapID target="PrintSetupIco"                   url="images/printersetup.png"/>
+        <mapID target="BackwardIco"                     url="images/Back.png"/>
+        <mapID target="ForwardIco"                      url="images/Forward.png"/>
+        <mapID target="LogoIco"                         url="images/logo.gif"/>
+        <mapID target="Favoritos"                       url="images/Favorites.png"/>
+        <mapID target="Home"                            url="images/Home.png"/>
+        <mapID target="Reload"                          url="images/Reload.png"/>
+</map>
