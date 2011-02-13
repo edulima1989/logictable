@@ -30,7 +30,7 @@ public class CrearBaseDeDatos {
 		conectar = null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conectar = DriverManager.getConnection
+		conectar = DriverManager.getConnection
                                    ("jdbc:mysql://localhost:3306/?",nombre_usuario,"");
 			sentencia = conectar.createStatement();
 
@@ -44,3 +44,4 @@ public class CrearBaseDeDatos {
 		}
 	}       
 }
+	
