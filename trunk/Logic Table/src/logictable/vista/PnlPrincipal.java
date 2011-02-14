@@ -1,12 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * PnlPrincipal.java
+ * PnlPrincipal
  *
- * Created on 15/12/2010, 09:08:26 PM
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.vista;
@@ -34,6 +37,11 @@ import logictable.modelo.TablaVerdad;
  *
  * @author EDÚ
  */
+
+/*
+ * Componentes para solucion de una expresion
+ */
+
 public class PnlPrincipal extends javax.swing.JPanel {
 
     /** Creates new form PnlPrincipal */

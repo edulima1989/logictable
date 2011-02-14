@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * ArchivoLtt
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo;
@@ -24,10 +33,22 @@ import logictable.vista.VtnPrincipal;
  *
  * @author EDÚ
  */
+
+/*
+ * Operaciones con los archivos
+ */
+
 public class ArchivosLtt {
     private static JFileChooser fc;
     private static  File archivo;
 
+
+ /**
+ *
+ * @ override "Método para guardar archivos"
+ * @param String texto
+ *
+ */
 
     public static void guardar(String texto) throws IOException{
         fc=new JFileChooser();
@@ -53,10 +74,26 @@ public class ArchivosLtt {
 
     }
 
+ /**
+ *
+ * @ override ""Método para obtener el nombre del archivo
+ * @return String
+ *
+ */
+
  public static String getNombreArchivo(){
           return archivo.getName();
         
  }
+
+ /**
+ *
+ * @ override "Método para abrir un archivo"
+ * @param boolean ant, boolean sig
+ * @return ""
+ *
+ */
+
     public static String abrir(JFrame parent ) throws BadLocationException{
 
         fc=new JFileChooser();

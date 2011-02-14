@@ -1,7 +1,17 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AnalizadorSintactico
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
+
 
 package logictable.modelo;
 
@@ -11,6 +21,11 @@ import java.util.List;
  *
  * @author EDÚ
  */
+
+/*
+ * Para identificar sintaxis de las expresiones
+ */
+
 public class AnalizadorSintactico {
     private static List<Lexico> lexicos;
 
@@ -18,6 +33,14 @@ public class AnalizadorSintactico {
     public AnalizadorSintactico(List<Lexico> lex){
         lexicos=lex;
     }
+
+  /**
+ *
+ * @ override "Método que comprueba si la sintaxis es correcta"
+ * @param List<Lexico> lex
+ * @return boolean  es
+ *
+ */
 
     public static boolean comprobarSintaxis(List<Lexico> lex){
         lexicos=lex;

@@ -1,11 +1,24 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AnalizadorSemantico
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo;
 
 import java.util.List;
+
+/* Comprobar la semantica y calcular solución
+/ de las expresiones algebraicas
+*/
 
 public class AnalizadorSemantico {
 
@@ -271,7 +284,11 @@ public class AnalizadorSemantico {
         return entrar;
     }
 
-
+ /**
+ *
+ * @ override "Metodo para destruir los parentesis sencillos"
+ *
+ */
     private boolean romperParentesisSencillos(){
         boolean entrar=false;
         for(int i=0;i<lexicos.size();i++){
@@ -287,6 +304,13 @@ public class AnalizadorSemantico {
         return entrar;
     }
 
+ /**
+ *
+ * @ override "Metodo para eliminar los paréntesis extremos"
+ * @param List<Lexico> lista
+ * @return  lista
+ *
+ */
     private List<Lexico> quitarParentExtre(List<Lexico> lista){
         boolean entrar=false;
         if(lista.get(0).getToken()==AFD.PARENT_AB&&
@@ -301,10 +325,13 @@ public class AnalizadorSemantico {
     }
     
 
-
-
-
-
+/**
+ *
+ * @ override
+ * @param boolean ant, boolean sig
+ * @return boolean
+ *
+ */
 
     private boolean[] expBiCond(boolean[] ant,boolean[] sig){
         boolean aux[]=new boolean[ant.length];
@@ -318,6 +345,14 @@ public class AnalizadorSemantico {
         return aux;
 
     }
+
+    /**
+ *
+ * @ override
+ * @param boolean ant, boolean sig
+ * @return boolean
+ *
+ */
 
     private boolean[] expCond(boolean[]  ant, boolean[] sig){
 
@@ -333,6 +368,14 @@ public class AnalizadorSemantico {
         return aux;
     }
 
+     /**
+ *
+ * @ override
+ * @param boolean ant, boolean sig
+ * @return boolean
+ *
+ */
+
     private boolean[] expUnion(boolean[] ant, boolean[] sig){
         boolean aux[]=new boolean[ant.length];
         for(int i=0;i<ant.length;i++){
@@ -344,6 +387,14 @@ public class AnalizadorSemantico {
         }
             return aux;
     }
+
+    /**
+ *
+ * @ override
+ * @param boolean ant, boolean sig
+ * @return boolean
+ *
+ */
 
     private boolean[] expInters(boolean[] ant,boolean[] sig){
         boolean aux[]=new boolean[ant.length];
@@ -357,6 +408,14 @@ public class AnalizadorSemantico {
             return aux;
     }
 
+ /**
+ *
+ * @ override
+ * @param boolean ant, boolean sig
+ * @return boolean
+ *
+ */
+    
     private boolean[] expNeg(boolean[] val){
         boolean aux[]=new boolean[val.length];
         for(int i=0;i<val.length;i++){
