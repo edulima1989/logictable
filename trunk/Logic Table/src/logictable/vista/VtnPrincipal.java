@@ -56,8 +56,8 @@ public class VtnPrincipal extends javax.swing.JFrame {
         btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnAbrir = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
+        btnVistaPrevia = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         miNuevo = new javax.swing.JMenuItem();
@@ -107,6 +107,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/save_32.png"))); // NOI18N
         btnGuardar.setToolTipText("Guardar");
+        btnGuardar.setEnabled(false);
         btnGuardar.setMargin(new java.awt.Insets(0, 0, 0, 0));
         btnGuardar.setMaximumSize(new java.awt.Dimension(35, 37));
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,14 +126,15 @@ public class VtnPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/print_32.png"))); // NOI18N
-        jButton5.setToolTipText("Imprimir");
-        jButton5.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jButton5.setMaximumSize(new java.awt.Dimension(35, 37));
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/print_32.png"))); // NOI18N
+        btnImprimir.setToolTipText("Imprimir");
+        btnImprimir.setEnabled(false);
+        btnImprimir.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btnImprimir.setMaximumSize(new java.awt.Dimension(35, 37));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/search_32.png"))); // NOI18N
-        jButton6.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jButton6.setMaximumSize(new java.awt.Dimension(35, 37));
+        btnVistaPrevia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/search_32.png"))); // NOI18N
+        btnVistaPrevia.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btnVistaPrevia.setMaximumSize(new java.awt.Dimension(35, 37));
 
         javax.swing.GroupLayout pnlBarraHerramLayout = new javax.swing.GroupLayout(pnlBarraHerram);
         pnlBarraHerram.setLayout(pnlBarraHerramLayout);
@@ -145,16 +147,16 @@ public class VtnPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAbrir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVistaPrevia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(602, Short.MAX_VALUE))
         );
         pnlBarraHerramLayout.setVerticalGroup(
             pnlBarraHerramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBarraHerramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnVistaPrevia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnImprimir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAbrir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnNuevo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -197,7 +199,6 @@ public class VtnPrincipal extends javax.swing.JFrame {
 
         miImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logictable/vista/Iconos/print_16.png"))); // NOI18N
         miImprimir.setText("Imprimir");
-        miImprimir.setEnabled(false);
         miImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miImprimirActionPerformed(evt);
@@ -297,11 +298,11 @@ public class VtnPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miNuevoActionPerformed
-            nuevo("","Nuevo");
+            nuevo("","Nuevo",0);
     }//GEN-LAST:event_miNuevoActionPerformed
 
-    private void nuevo(String texto, String Nombre){
-            PnlPrincipal pn=new PnlPrincipal(pnlTabla,texto, Nombre);
+    private void nuevo(String texto, String Nombre, int tipo){
+            PnlPrincipal pn=new PnlPrincipal(pnlTabla,texto, Nombre,tipo);
             pnlTabla.add(pn);
             pnlTabla.setSelectedIndex(pnlTabla.getComponentCount()-1);
             JPanel aux=new JPanel(new BorderLayout());
@@ -312,15 +313,16 @@ public class VtnPrincipal extends javax.swing.JFrame {
             this.setVisible(true);
             miGuardar.setEnabled(true);
             miImprimir.setEnabled(true);
-            JPanel p=new JPanel();
+            btnGuardar.setEnabled(true);
+            btnImprimir.setEnabled(true);
 
     }
 
     private void miAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAbrirActionPerformed
         try {
             String str=ArchivosLtt.abrir(this);
-            String nomb=ArchivosLtt.getNombreArchivo(this);
-            nuevo(str, nomb);
+            String nomb=ArchivosLtt.getNombreArchivo();
+            nuevo(str, nomb,1);
         } catch (BadLocationException ex) {
             Logger.getLogger(VtnPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -331,6 +333,8 @@ public class VtnPrincipal extends javax.swing.JFrame {
         String str=((PnlPrincipal)pnlTabla.getSelectedComponent()).getTexto();
         try {
             ArchivosLtt.guardar(str);
+           ((PnlPrincipal)pnlTabla.getSelectedComponent()).setTitulos(ArchivosLtt.getNombreArchivo());
+          
         } catch (IOException ex) {
             Logger.getLogger(VtnPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -341,7 +345,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
     }
 
     private void miImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miImprimirActionPerformed
-            new Ayuda(this);
+
     }//GEN-LAST:event_miImprimirActionPerformed
 
     private void pnlTablaComponentRemoved(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_pnlTablaComponentRemoved
@@ -352,6 +356,8 @@ public class VtnPrincipal extends javax.swing.JFrame {
                     this.setContentPane(aux);
                     miGuardar.setEnabled(false);
                     miImprimir.setEnabled(false);
+                    btnGuardar.setEnabled(false);
+                    btnImprimir.setEnabled(false);
             }
     }//GEN-LAST:event_pnlTablaComponentRemoved
 
@@ -421,9 +427,9 @@ public class VtnPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbrir;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnVistaPrevia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

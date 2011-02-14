@@ -7,25 +7,16 @@ package logictable.modelo;
 
 import java.util.List;
 
-/**
- *
- * @author EDÚ
- */
 public class AnalizadorSemantico {
 
     private static List<Lexico> lexicos;
-    private List<Lexico> lexicos2;
     private boolean val_P [];
     private boolean val_Q [];
     private boolean val_R [];
     private int variables;
+    private String expresi="";
 
     public TablaVerdad valoresTabla(){
-
-        String expresi="";
-        for(Lexico lex:lexicos2){
-            expresi+=lex.getLexema();
-        }
         boolean aux[][]=new boolean[0][0];
         String titulos[]=new String[0];
         if(variables==3){
@@ -109,9 +100,9 @@ public class AnalizadorSemantico {
 
     public AnalizadorSemantico(List<Lexico> lex){
         lexicos=lex;
-        lexicos2=lex;
         boolean p=false,q=false,r=false;
         for(Lexico l:lexicos){
+            expresi+=l.getLexema();
             if(l.getToken()==AFD.VARIABLE_A)
                 p=true;
             else if(l.getToken()==AFD.VARIABLE_B)

@@ -48,11 +48,12 @@ public class ArchivosLtt {
                 br.write(texto);
                 br.close();
                 JOptionPane.showMessageDialog(fc, "El archivo se guardo con exito","Logic Table" ,JOptionPane.INFORMATION_MESSAGE);
+                archivo=f;
          }
 
     }
 
- public static String getNombreArchivo(JFrame parent){
+ public static String getNombreArchivo(){
           return archivo.getName();
         
  }

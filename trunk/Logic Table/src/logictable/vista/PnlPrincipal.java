@@ -43,7 +43,7 @@ public class PnlPrincipal extends javax.swing.JPanel {
         tablaVerdad.getSelectedRowCount();
     }
 
-    public PnlPrincipal(JTabbedPane contenedor,String archivo,String nombre) {
+    public PnlPrincipal(JTabbedPane contenedor,String archivo,String nombre, int tipo) {
         initComponents();
         this.contenedor=contenedor;
         txtEntrada.setText(archivo);
@@ -51,9 +51,19 @@ public class PnlPrincipal extends javax.swing.JPanel {
         lblNombre.setText(nombre);
         proposicion=archivo;
         this.nombre=nombre;
-        analizarTokens();
+        this.analizarTokens();
+        if(tipo==1)
+            sintaxis();
     }
 
+    public void setTitulos(String nombre){
+        lblNombre.setText(nombre);
+        this.setName(nombre);
+        this.nombre=nombre;
+        proposicion=txtEntrada.getText();
+        this.setVisible(true);
+        
+    }
     public String getTexto(){
         return txtEntrada.getText();
     }
@@ -307,7 +317,7 @@ public class PnlPrincipal extends javax.swing.JPanel {
         analizarTokens();
     }//GEN-LAST:event_txtEntradaKeyReleased
 
-    public void analizarTokens(){
+    private void analizarTokens(){
         analizadorLexico.crearTokens(txtEntrada.getText());
         List<Lexico> lista =analizadorLexico.getLexicos();
         Object datos [][] = new Object[lista.size()][2];
@@ -323,13 +333,28 @@ public class PnlPrincipal extends javax.swing.JPanel {
         ));
         int c=0;
         boolean bandera=false;
+        boolean var_P=false;
+        boolean var_Q=false;
+        boolean var_R=false;
         for(Lexico le:lista){
-            if(le.getToken()==AFD.VARIABLE_A||le.getToken()==AFD.VARIABLE_B||
-                    le.getToken()==AFD.VARIABLE_C)
-                c++;
+            if(le.getToken()==AFD.VARIABLE_A)
+                        var_P=true;
+            else if(le.getToken()==AFD.VARIABLE_B)
+                var_Q=true;
+            else if(le.getToken()==AFD.VARIABLE_C)
+                var_R=true;
+
             if(le.getToken()==AFD.EOF)
                 bandera=true;
           }
+        if(var_P&&var_Q&&var_R)
+            c=3;
+        else if((var_P&&var_Q)||(var_P&&var_R)||var_Q&&var_R)
+            c=2;
+        else if(var_P||var_Q||var_R)
+            c=1;
+        
+
           lblVariables.setText(""+c);
 
           if(bandera){
@@ -347,8 +372,8 @@ public class PnlPrincipal extends javax.swing.JPanel {
           }
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            analizadorLexico.crearTokens(txtEntrada.getText());
+    private void sintaxis(){
+        analizadorLexico.crearTokens(txtEntrada.getText());
             List<Lexico> lista =analizadorLexico.getLexicos();
             boolean errorLexico=false;
             for(Lexico lex:lista){
@@ -356,11 +381,15 @@ public class PnlPrincipal extends javax.swing.JPanel {
                         errorLexico=true;
             }
 
-            if(errorLexico)
+            if(errorLexico){
                         JOptionPane.showMessageDialog(this, "No se puede resolver porque\n "
                                 +"existe un error Lexico","Logic Table: ERROR LEXICO", JOptionPane.ERROR_MESSAGE);
+                       tablaVerdad.setModel(new DefaultTableModel(
+                                new String[1][1],
+                                new String []{"?","?","?"}
+                        ));
 
-            else{
+            } else {
                 if(AnalizadorSintactico.comprobarSintaxis(lista)){
                     AnalizadorSemantico analSeman=new AnalizadorSemantico(lista);
                     TablaVerdad tablaVerdad1=analSeman.valoresTabla();
@@ -369,11 +398,22 @@ public class PnlPrincipal extends javax.swing.JPanel {
                         tablaVerdad1.getVariables()
                     ));
                 }
-                else
+                else{
                         JOptionPane.showMessageDialog(this, "No se puede resolver porque\n "
                                 +"existe un error de sintaxis","Logic Table: ERROR DE SINTAXIS", JOptionPane.ERROR_MESSAGE);
+                         tablaVerdad.setModel(new DefaultTableModel(
+                                new String[1][1],
+                                new String []{"?","?","?"}
+                        ));
+                }
             }
+    }
+
+
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             
+            sintaxis();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtEntradaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntradaKeyPressed

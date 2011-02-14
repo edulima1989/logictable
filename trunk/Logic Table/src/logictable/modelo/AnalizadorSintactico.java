@@ -28,7 +28,8 @@ public class AnalizadorSintactico {
         for(int i=0;i<lexicos.size();i++){
             switch(num){
                 case 0:
-                    if(lexicos.get(i).getToken()==AFD.PARENT_AB){
+                    if(lexicos.get(i).getToken()==AFD.PARENT_AB&&
+                            lexicos.get(i+1).getToken()!=AFD.PARENT_CE){
                         contarParent++;
                         num=1;
                         es=false;
