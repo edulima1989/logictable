@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <map version="1.0">
-        <mapID target="tema1"                   url="pages/page1.html"/>
-        <mapID target="tema2"                   url="pages/page2.html"/>
-        <mapID target="tema3"                   url="pages/page3.html"/>
-        <mapID target="tema4"                   url="pages/page4.html"/>
-        <mapID target="tema5"                   url="pages/page5.html"/>
-        <mapID target="tema6"                   url="pages/page6.html"/>
-        <mapID target="tema7"                   url="pages/page7.html"/>
-        <mapID target="tema8"                   url="pages/page8.html"/>
+        <mapID target="tema1"                   url="pages/informacion.html"/>
+        <mapID target="tema2"                   url="pages/caracteristicas.html"/>
+        <mapID target="tema3"                   url="pages/requerimientos.html"/>
+        <mapID target="tema4"                   url="pages/nuevo.html"/>
+        <mapID target="tema5"                   url="pages/abrir.html"/>
+        <mapID target="tema6"                   url="pages/resolver.html"/>
+        <mapID target="tema7"                   url="pages/ayuda.html"/>
+        <mapID target="tema8"                   url="pages/desarrolladores.html"/>
+        <mapID target="tema9"                   url="pages/apariencia.html"/>
         <mapID target="index"                   url="pages/index.htm"/>
 
 

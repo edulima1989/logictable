@@ -5,7 +5,7 @@
         <tocitem text="Introduccion">
                 <tocitem text="Introducción"    target="index"/>
         </tocitem>
-        <tocitem text="tema">
+        <tocitem text="Acerca de Logic Table">
                 <tocitem text="Información del Programa"             target="tema1"/>
                 <tocitem text="Caracteristicas"                      target="tema2"/>
                 <tocitem text="Requerimientos del Sistema"           target="tema3"/>
@@ -14,7 +14,8 @@
                 <tocitem text="Resolver Ejercicio"                   target="tema6"/>
                 <tocitem text="Ayuda"                                target="tema7"/>
                 <tocitem text="Desarrolladores"                      target="tema8"/>
-                
+                <tocitem text="Apariencia"                           target="tema9"/>
+
                
 
 
