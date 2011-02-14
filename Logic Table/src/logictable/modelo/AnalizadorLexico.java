@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AnalizadorLexico
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo;
@@ -14,6 +23,8 @@ import java.util.List;
  *
  *
  */
+
+// ESta clase nos sirve para identficar los tokens y lexemas
 public class AnalizadorLexico {
 
     private List<Lexico> lexicos;
@@ -24,6 +35,12 @@ public class AnalizadorLexico {
         this.afd=new AFD();
     }
 
+ /**
+ *
+ * @ override "Metodo para crear cada token"
+ * @param String str
+ *
+ */
     public void crearTokens(String texto){
         this.afd.verificaTexto(texto, this);
         

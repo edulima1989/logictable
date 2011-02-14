@@ -1,19 +1,23 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * AcercaDe.java
+ * AcercaDe
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
  *
  * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
+
 
 package logictable.vista;
 
 /**
  *
- * @author Fabricio
+ * @author Edú
  */
 public class AcercaDe extends javax.swing.JFrame {
 

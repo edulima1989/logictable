@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Reporte
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo.reporte;
@@ -9,6 +18,11 @@ package logictable.modelo.reporte;
  *
  * @author EDÚ
  */
+
+/*
+ * Poder realizar un reporte
+ */
+
 public class Reporte {
     private  String expresion;
 

@@ -6,7 +6,11 @@
 * German Salas
 * Carlos Vivanco
 * Eduardo Lima
+* Created on 15/07/2009, 11:16:29 PM
+*
+* Copyleft
 */
+
 
 package logictable.modelo.reporte;
 

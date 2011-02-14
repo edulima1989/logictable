@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AFD
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo;
@@ -12,6 +21,8 @@ import java.util.ArrayList;
  * @author EDÚ
  *
  */
+
+// Para crear el automata finito determinista
 public class AFD {
 
 //    public enum  TOKEN {TOKEN_ERROR,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12};
@@ -28,6 +39,12 @@ public class AFD {
     public static final int VARIABLE_C=13;
     public static final int BLANCO=14;
 
+/**
+ *
+ * @ override "Metodo que verifica si el texto ingresado está correcto"
+ * @param String tex, AnalizadorLexico lex
+ *
+ */
 
     public void verificaTexto(String texto, AnalizadorLexico lex){
         lex.getLexicos().clear();

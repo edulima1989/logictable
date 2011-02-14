@@ -1,10 +1,15 @@
 /*
- * Ayuda.java
+ * Ayuda
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
  *
  * Created on 27 de abril de 2006, 12:30 PM
  *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
+ * Copyleft
  */
 
 package logictable.ayuda;
@@ -22,6 +27,8 @@ import javax.swing.JPanel;
  *
  * @author 
  */
+
+// Nos permitira crear la ayuda del programa
 public class Ayuda {
     
     private HelpBroker help_browser = null;

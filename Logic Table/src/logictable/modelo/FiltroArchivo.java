@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * FiltroArchivo
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyright
  */
 
 package logictable.modelo;
@@ -12,8 +21,20 @@ import javax.swing.filechooser.FileFilter;
  *
  * @author EDÚ
  */
-public class FiltroArchivo extends FileFilter{
 
+/*
+ *Para la extensión de archivos
+ */
+
+public class FiltroArchivo extends FileFilter{
+    
+/**
+ *
+ * @ override
+ * @param File f
+ * @return boolean
+ *
+ */
 
     public boolean accept(File f){
         if (f.isDirectory()){

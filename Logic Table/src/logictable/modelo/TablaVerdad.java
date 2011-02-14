@@ -1,6 +1,15 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Tabla de Verdad
+ *
+ * Ana Campoverde
+ * Eduardo Lima
+ * German Salas
+ * Yanela Ríos
+ * Carlos Vivanco
+ *
+ * Created on 15/07/2009, 11:16:29 PM
+ *
+ * Copyleft
  */
 
 package logictable.modelo;
@@ -9,6 +18,11 @@ package logictable.modelo;
  *
  * @author EDÚ
  */
+
+/*
+ * Mostrar las valores
+ */
+
 public class TablaVerdad {
 
    private boolean tabla[][]=new boolean[0][0];
