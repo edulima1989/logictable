@@ -399,10 +399,12 @@ public class VtnPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+
         Ayuda ay= new Ayuda();
         //ay.setVisible(true);
         //ay.setLocationRelativeTo(null);
         // TODO add your handling code here:
+
 }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**

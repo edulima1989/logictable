@@ -38,6 +38,7 @@ public class Configuracion {
 
     public Session currentSession() throws HibernateException {
         Session s = (Session) session.get();
+
         // Open a new Session, if this thread has none yet
         if (s == null) {
             s = sessionFactory.openSession();

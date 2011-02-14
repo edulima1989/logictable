@@ -34,7 +34,7 @@ public class CrearBaseDeDatos {
                                    ("jdbc:mysql://localhost:3306/?",nombre_usuario,"");
 			sentencia = conectar.createStatement();
 
-                        sentencia.executeUpdate("DROP DATABASE IF EXISTS "+dataBase);
+//                        sentencia.executeUpdate("DROP DATABASE IF EXISTS "+dataBase);
 
                         sentencia.executeUpdate("CREATE DATABASE IF NOT EXISTS "+dataBase);
                         //sentencia.executeUpdate("USE "+dataBase);
@@ -42,6 +42,10 @@ public class CrearBaseDeDatos {
 			 System.out.println("Error en conexion"+e);
                         return;
 		}
-	}       
+	}
+        public static void main(String []arg){
+            CrearBaseDeDatos b=new CrearBaseDeDatos();
+        }
+
 }
 	

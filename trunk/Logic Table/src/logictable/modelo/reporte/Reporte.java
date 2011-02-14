@@ -12,4 +12,12 @@ package logictable.modelo.reporte;
 public class Reporte {
     private  String expresion;
 
+    public String getExpresion() {
+        return expresion;
+    }
+
+    public void setExpresion(String expresion) {
+        this.expresion = expresion;
+    }
+
 }
