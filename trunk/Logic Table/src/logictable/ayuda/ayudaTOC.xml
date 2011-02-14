@@ -7,17 +7,14 @@
         </tocitem>
         <tocitem text="tema">
                 <tocitem text="Información del Programa"             target="tema1"/>
-                <tocitem text="Caracteristicas"                 target="tema2"/>
-                <tocitem text="Requerimientos del Sistema"                    target="tema3"/>
-                <tocitem text="Desarrolladores"      target="tema4"/>
-                <tocitem text="subtema 5"                  target="tema20"/>
-                <tocitem text="subtema 6"                 target="tema5"/>
-                <tocitem text="subtema 7"                    target="tema6"/>
-                <tocitem text="subtema 8"               target="tema7"/>
-                <tocitem text="subtema 9"       target="tema8"/>
-                <tocitem text="subtema 10"                 target="tema9"/>
-                <tocitem text="subtema 11"                   target="tema10"/>
-                <tocitem text="subtema 12"    target="tema11"/>
+                <tocitem text="Caracteristicas"                      target="tema2"/>
+                <tocitem text="Requerimientos del Sistema"           target="tema3"/>
+                <tocitem text="Crear Nuevo Documento"                target="tema4"/>
+                <tocitem text="Abrir y Guardar"                      target="tema5"/>
+                <tocitem text="Resolver Ejercicio"                   target="tema6"/>
+                <tocitem text="Ayuda"                                target="tema7"/>
+                <tocitem text="Desarrolladores"                      target="tema8"/>
+                
                
 
 
