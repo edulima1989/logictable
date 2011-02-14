@@ -6,11 +6,11 @@
                 <tocitem text="Introducción"    target="index"/>
         </tocitem>
         <tocitem text="tema">
-                <tocitem text="subtema 1"             target="tema20"/>
-                <tocitem text="subtema 2"                 target="tema1"/>
-                <tocitem text="subtema 3"                    target="tema2"/>
-                <tocitem text="subtema 4"      target="tema3"/>
-                <tocitem text="subtema 5"                  target="tema4"/>
+                <tocitem text="Información del Programa"             target="tema1"/>
+                <tocitem text="Caracteristicas"                 target="tema2"/>
+                <tocitem text="Requerimientos del Sistema"                    target="tema3"/>
+                <tocitem text="Desarrolladores"      target="tema4"/>
+                <tocitem text="subtema 5"                  target="tema20"/>
                 <tocitem text="subtema 6"                 target="tema5"/>
                 <tocitem text="subtema 7"                    target="tema6"/>
                 <tocitem text="subtema 8"               target="tema7"/>
