@@ -557,6 +557,7 @@ switch(n){
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         if(pnlTabla.getComponents().length==0){
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            dispose();
         }else{
             int n=JOptionPane.showConfirmDialog(this, "Esta a punto de cerrar Logic Table si continua\n"
                                                 + "se perderan los cambios realizados actualmente\n"
@@ -567,6 +568,7 @@ switch(n){
 switch(n){
     case 0:
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        dispose();
         break;
     case 1:
          this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
