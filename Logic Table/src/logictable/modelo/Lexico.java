@@ -15,10 +15,15 @@ public class Lexico {
 
     private int token;
     private String lexema;
+    private boolean valor[];
 
     public Lexico(int token, String lexema) {
         this.token = token;
         this.lexema = lexema;
+    }
+
+        public Lexico() {
+
     }
 
     public String getLexema() {
@@ -40,6 +45,14 @@ public class Lexico {
     @Override
     public String toString() {
         return token +": "+lexema;
+    }
+    
+    public boolean[] getValor() {
+        return valor;
+    }
+
+    public void setValor(boolean[] valor) {
+        this.valor = valor;
     }
 
 

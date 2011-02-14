@@ -43,5 +43,11 @@ public class OperacionDAO {
             return false;
         }
         return true;
-    }    
+    }
+     public static void main(String []arg){
+         Reporte r=new Reporte();
+         r.setExpresion("probando reportes");
+         OperacionDAO.mt_guardar(r);
+        }
+
 }
