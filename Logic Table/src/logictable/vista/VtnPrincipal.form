@@ -65,7 +65,6 @@
                   <Image iconType="3" name="/logictable/vista/Iconos/print_16.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Imprimir"/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miImprimirActionPerformed"/>
@@ -260,9 +259,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnAbrir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnImprimir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVistaPrevia" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="602" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -270,8 +269,8 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jButton6" alignment="0" max="32767" attributes="1"/>
-                  <Component id="jButton5" alignment="0" max="32767" attributes="1"/>
+                  <Component id="btnVistaPrevia" alignment="0" max="32767" attributes="1"/>
+                  <Component id="btnImprimir" alignment="0" max="32767" attributes="1"/>
                   <Component id="btnAbrir" alignment="0" max="32767" attributes="1"/>
                   <Component id="btnGuardar" alignment="0" max="32767" attributes="1"/>
                   <Component id="btnNuevo" alignment="0" max="32767" attributes="1"/>
@@ -303,6 +302,7 @@
               <Image iconType="3" name="/logictable/vista/Iconos/save_32.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Guardar"/>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[0, 0, 0, 0]"/>
             </Property>
@@ -331,12 +331,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAbrirActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="btnImprimir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/logictable/vista/Iconos/print_32.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Imprimir"/>
+            <Property name="enabled" type="boolean" value="false"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[0, 0, 0, 0]"/>
             </Property>
@@ -345,7 +346,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton6">
+        <Component class="javax.swing.JButton" name="btnVistaPrevia">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/logictable/vista/Iconos/search_32.png"/>
