@@ -11,13 +11,10 @@
  *
  * Copyleft
  */
-
 package logictable.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 // ESta clase nos sirve para identficar los tokens y lexemas
 public class AnalizadorLexico {
@@ -27,15 +24,15 @@ public class AnalizadorLexico {
 
     public AnalizadorLexico() {
         this.lexicos = new ArrayList<Lexico>();
-        this.afd=new AFD();
+        this.afd = new AFD();
     }
 
-    public void crearTokens(String texto){
+    public void crearTokens(String texto) {
         this.afd.verificaTexto(texto, this);
-        
+
     }
 
-    public void addLexico(Lexico lexico){
+    public void addLexico(Lexico lexico) {
         lexicos.add(lexico);
     }
 
@@ -44,9 +41,6 @@ public class AnalizadorLexico {
     }
 
     public void setLexicos(List<Lexico> lexicos) {
-           this.lexicos = lexicos;
+        this.lexicos = lexicos;
     }
-
-
-
 }

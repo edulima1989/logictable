@@ -11,7 +11,6 @@
  *
  * Copyleft
  */
-
 package logictable.modelo;
 
 public class Lexico {
@@ -25,8 +24,7 @@ public class Lexico {
         this.lexema = lexema;
     }
 
-        public Lexico() {
-
+    public Lexico() {
     }
 
     public String getLexema() {
@@ -47,9 +45,9 @@ public class Lexico {
 
     @Override
     public String toString() {
-        return token +": "+lexema;
+        return token + ": " + lexema;
     }
-    
+
     public boolean[] getValor() {
         return valor;
     }
@@ -57,6 +55,4 @@ public class Lexico {
     public void setValor(boolean[] valor) {
         this.valor = valor;
     }
-
-
 }

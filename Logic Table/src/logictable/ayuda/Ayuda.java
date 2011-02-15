@@ -11,7 +11,6 @@
  *
  * Copyleft
  */
-
 package logictable.ayuda;
 
 import java.awt.Component;
@@ -23,23 +22,17 @@ import javax.help.JHelp;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-/**
- *
- * @author 
- */
-
-// Nos permitira crear la ayuda del programa
 public class Ayuda {
-    
+
     private HelpBroker help_browser = null;
     private HelpSet helpset = null;
-    private HelpSet.Presentation hsp =null;
-    
-    public Ayuda(){
-        try{
+    private HelpSet.Presentation hsp = null;
+
+    public Ayuda() {
+        try {
             URL hsURL = this.getClass().getResource("ayuda.hs");
-            helpset=new HelpSet(null, hsURL);
-            
+            helpset = new HelpSet(null, hsURL);
+
             JHelp help = new JHelp(helpset);
             JFrame frame = new JFrame("help");
             JPanel panel = new JPanel(new GridLayout());
@@ -52,28 +45,26 @@ public class Ayuda {
             frame.setVisible(true);
             frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("error");
         }
     }
-
-
 
     /** Creates a new instance of Ayuda */
     public Ayuda(Component component) {
-        try{
+        try {
             URL hsURL = this.getClass().getResource("/resources/ayuda.hs");
-            helpset=new HelpSet(null, hsURL);
-            hsp=helpset.getPresentation("MainWin");
-            help_browser=helpset.createHelpBroker();   
+            helpset = new HelpSet(null, hsURL);
+            hsp = helpset.getPresentation("MainWin");
+            help_browser = helpset.createHelpBroker();
             help_browser.setHelpSetPresentation(hsp);
             help_browser.enableHelpOnButton(component, "introduccion", helpset);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("error");
         }
     }
 
-    public void showAyuda(String tema){
+    public void showAyuda(String tema) {
         try {
             help_browser.setCurrentID(tema);
         } catch (Exception e) {
@@ -81,10 +72,8 @@ public class Ayuda {
         }
         help_browser.setDisplayed(true);
     }
-    
+
     public static void main(String args[]) {
         new Ayuda();
     }
-
-    
 }
