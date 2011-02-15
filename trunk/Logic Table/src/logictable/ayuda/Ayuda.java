@@ -50,7 +50,7 @@ public class Ayuda {
         }
     }
 
-    /** Creates a new instance of Ayuda */
+    /** Crea una nueva instancea de ayuda */
     public Ayuda(Component component) {
         try {
             URL hsURL = this.getClass().getResource("/resources/ayuda.hs");
