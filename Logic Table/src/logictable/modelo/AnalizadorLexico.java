@@ -17,12 +17,7 @@ package logictable.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author EDÚ
- *
- *
- */
+
 
 // ESta clase nos sirve para identficar los tokens y lexemas
 public class AnalizadorLexico {
@@ -35,12 +30,6 @@ public class AnalizadorLexico {
         this.afd=new AFD();
     }
 
- /**
- *
- * @ override "Metodo para crear cada token"
- * @param String str
- *
- */
     public void crearTokens(String texto){
         this.afd.verificaTexto(texto, this);
         

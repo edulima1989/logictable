@@ -14,11 +14,6 @@
 
 package logictable.modelo;
 
-/**
- *
- * @author EDÚ
- */
-
 /*
  * Mostrar las valores
  */

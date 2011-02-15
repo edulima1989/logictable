@@ -17,11 +17,6 @@ package logictable.modelo;
 
 import java.util.List;
 
-/**
- *
- * @author EDÚ
- */
-
 /*
  * Para identificar sintaxis de las expresiones
  */

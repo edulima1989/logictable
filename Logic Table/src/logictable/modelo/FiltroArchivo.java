@@ -17,10 +17,6 @@ package logictable.modelo;
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 
-/**
- *
- * @author EDÚ
- */
 
 /*
  *Para la extensión de archivos

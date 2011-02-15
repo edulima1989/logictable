@@ -14,13 +14,6 @@
 
 package logictable.modelo;
 
-/**
- *
- * @author EDÚ
- * 
- * Especificación de tokens y lexemas
- *
- */
 public class Lexico {
 
     private int token;
