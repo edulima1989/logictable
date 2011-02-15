@@ -11,7 +11,6 @@
  *
  * Copyright
  */
-
 package logictable.modelo;
 
 import java.io.File;
@@ -21,25 +20,23 @@ import javax.swing.filechooser.FileFilter;
 /*
  *Para la extensión de archivos
  */
+public class FiltroArchivo extends FileFilter {
 
-public class FiltroArchivo extends FileFilter{
-    
-/**
- *
- * @ override
- * @param File f
- * @return boolean
- *
- */
-
-    public boolean accept(File f){
-        if (f.isDirectory()){
+    /**
+     *
+     * @ override
+     * @param File f
+     * @return boolean
+     *
+     */
+    public boolean accept(File f) {
+        if (f.isDirectory()) {
             return true;
         }
 
         String extension = f.getName();
         //podemos agregar mas extensiones
-        if (extension.endsWith(".ltt")){
+        if (extension.endsWith(".ltt")) {
             return true;
         }
         return false;
@@ -49,5 +46,4 @@ public class FiltroArchivo extends FileFilter{
         //es la descripcion que vemos
         return "Archivos de texto (.ltt)";
     }
-
 }

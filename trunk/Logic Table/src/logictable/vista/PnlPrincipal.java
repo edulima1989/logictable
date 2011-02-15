@@ -11,12 +11,12 @@
  *
  * Copyleft
  */
-
 package logictable.vista;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,44 +41,44 @@ import logictable.modelo.TablaVerdad;
 /*
  * Componentes para solucion de una expresion
  */
-
 public class PnlPrincipal extends javax.swing.JPanel {
 
     /** Creates new form PnlPrincipal */
     public PnlPrincipal(JTabbedPane contenedor) {
         initComponents();
-        this.contenedor=contenedor;
+        this.contenedor = contenedor;
         tablaVerdad.getSelectedRowCount();
     }
 
-    public PnlPrincipal(JTabbedPane contenedor,String archivo,String nombre, int tipo) {
+    public PnlPrincipal(JTabbedPane contenedor, String archivo, String nombre, int tipo) {
         initComponents();
-        this.contenedor=contenedor;
+        this.contenedor = contenedor;
         txtEntrada.setText(archivo);
         this.setName(nombre);
         lblNombre.setText(nombre);
-        proposicion=archivo;
-        this.nombre=nombre;
+        proposicion = archivo;
+        this.nombre = nombre;
         this.analizarTokens();
-        if(tipo==1)
+        if (tipo == 1) {
             sintaxis();
+        }
     }
 
-    public void setTitulos(String nombre){
+    public void setTitulos(String nombre) {
         lblNombre.setText(nombre);
         this.setName(nombre);
-        this.nombre=nombre;
-        proposicion=txtEntrada.getText();
+        this.nombre = nombre;
+        proposicion = txtEntrada.getText();
         this.setVisible(true);
-        
+
     }
-    public String getTexto(){
+
+    public String getTexto() {
         return txtEntrada.getText();
     }
-
     private JTabbedPane contenedor;
 
-    public JTextPane getTextPane(){
+    public JTextPane getTextPane() {
         return txtEntrada;
     }
 
@@ -382,43 +382,43 @@ public class PnlPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            cerrar();
+        cerrar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    public void cerrar(){
-        if(!txtEntrada.getText().equals(proposicion)){
-            int n=JOptionPane.showConfirmDialog(this, "¿Desea Guardar los cambios efectuados en "+nombre+"?", "Logic Table", JOptionPane.YES_NO_CANCEL_OPTION);
-            switch(n){
+    public void cerrar() {
+        if (!txtEntrada.getText().equals(proposicion)) {
+            int n = JOptionPane.showConfirmDialog(this, "¿Desea Guardar los cambios efectuados en " + nombre + "?", "Logic Table", JOptionPane.YES_NO_CANCEL_OPTION);
+            switch (n) {
                 case 0:
-                        try {
-                            ArchivosLtt.guardar(txtEntrada.getText());
+                    try {
+                        ArchivosLtt.guardar(txtEntrada.getText());
 
-                        } catch (IOException ex) {
-                            Logger.getLogger(PnlPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                        contenedor.remove(this);
-                        contenedor.setVisible(true);
+                    } catch (IOException ex) {
+                        Logger.getLogger(PnlPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    contenedor.remove(this);
+                    contenedor.setVisible(true);
                     break;
                 case 1:
-                        contenedor.remove(this);
-                        contenedor.setVisible(true);
+                    contenedor.remove(this);
+                    contenedor.setVisible(true);
                     break;
                 case 2:
                     break;
-                    default:
+                default:
             }
-        }else{
-            int n=JOptionPane.showConfirmDialog(this, "¿Está seguro de cerrar "+nombre+"?", "Logic Table", JOptionPane.YES_NO_OPTION);
-             switch(n){
+        } else {
+            int n = JOptionPane.showConfirmDialog(this, "¿Está seguro de cerrar " + nombre + "?", "Logic Table", JOptionPane.YES_NO_OPTION);
+            switch (n) {
                 case 0:
-                        contenedor.remove(this);
-                        contenedor.setVisible(true);
+                    contenedor.remove(this);
+                    contenedor.setVisible(true);
                     break;
                 case 1:
                     break;
                 case 2:
                     break;
-                    default:
+                default:
             }
         }
     }
@@ -427,112 +427,158 @@ public class PnlPrincipal extends javax.swing.JPanel {
         analizarTokens();
     }//GEN-LAST:event_txtEntradaKeyReleased
 
-    private void analizarTokens(){
+    private void analizarTokens() {
         analizadorLexico.crearTokens(txtEntrada.getText());
-        List<Lexico> lista =analizadorLexico.getLexicos();
-        Object datos [][] = new Object[lista.size()][2];
+        List<Lexico> lista = analizadorLexico.getLexicos();
+        Object datos[][] = new Object[lista.size()][2];
+
+        ArrayList<String> nombre = new ArrayList<String>();
+        nombre.add("ERROR");
+        nombre.add("Op. Union");
+        nombre.add("Op. Negación");
+        nombre.add("Op. Intersección");
+        nombre.add("Op. Bicondicional");
+        nombre.add("Op. Condicional");
+        nombre.add("Parent. Abrir");
+        nombre.add("Parent. Cerrar");
+        nombre.add("Var. (p)");
+        nombre.add("Var. (q)");
+        nombre.add("Var. (r)");
+
         for (int i = 0; i < datos.length; i++) {
-            datos[i][0]=lista.get(i).getToken();
-            datos[i][1]=lista.get(i).getLexema();
+            datos[i][0] = (lista.get(i).getToken());
+            switch (lista.get(i).getToken()) {
+                case -1:
+                    datos[i][0] = "ERROR";
+                    break;
+                case 4:
+                    datos[i][0] = "Op. Unión";
+                    break;
+                case 5:
+                    datos[i][0] = "Op. Negación";
+                    break;
+                case 6:
+                    datos[i][0] = "Op. Interseccion";
+                    break;
+                case 7:
+                    datos[i][0] = "Op.Bicondicional";
+                    break;
+                case 8:
+                    datos[i][0] = "Op. Condicional";
+                    break;
+                case 9:
+                    datos[i][0] = "Parent. Abrir";
+                    break;
+                case 10:
+                    datos[i][0] = "Parent. Cerrar";
+                    break;
+                case 11:
+                    datos[i][0] = "Var. p";
+                    break;
+                case 12:
+                    datos[i][0] = "Var. q";
+                    break;
+                case 13:
+                    datos[i][0] = "Var. r";
+                    break;
+
+            }
+
+            datos[i][1] = lista.get(i).getLexema();
         }
+
+
         tabla.setModel(new DefaultTableModel(
-            datos,
-            new String [] {
-                "Tokens", "Lexema"
-            }
-        ));
-        int c=0;
-        boolean bandera=false;
-        boolean var_P=false;
-        boolean var_Q=false;
-        boolean var_R=false;
-        for(Lexico le:lista){
-            if(le.getToken()==AFD.VARIABLE_A)
-                        var_P=true;
-            else if(le.getToken()==AFD.VARIABLE_B)
-                var_Q=true;
-            else if(le.getToken()==AFD.VARIABLE_C)
-                var_R=true;
-
-            if(le.getToken()==AFD.EOF)
-                bandera=true;
-          }
-        if(var_P&&var_Q&&var_R)
-            c=3;
-        else if((var_P&&var_Q)||(var_P&&var_R)||var_Q&&var_R)
-            c=2;
-        else if(var_P||var_Q||var_R)
-            c=1;
-        
-
-          lblVariables.setText(""+c);
-
-          if(bandera){
-              lblError.setBorder(new LineBorder(Color.RED,10,true));
-              lblErrorTitulo.setText("Error:");
-          }else{
-              if(AnalizadorSintactico.comprobarSintaxis(lista)){
-              lblError.setBorder(new LineBorder(Color.GREEN,10,true));
-              lblErrorTitulo.setText("Correcto:");
-              }else{
-                lblError.setBorder(new LineBorder(Color.RED,10,true));
-              lblErrorTitulo.setText("Error:");
-              }
-
-          }
-    }
-
-    private void sintaxis(){
-        analizadorLexico.crearTokens(txtEntrada.getText());
-            List<Lexico> lista =analizadorLexico.getLexicos();
-            boolean errorLexico=false;
-            for(Lexico lex:lista){
-                if(lex.getToken()==AFD.EOF)
-                        errorLexico=true;
+                datos,
+                new String[]{
+                    "Tokens", "Lexema"
+                }));
+        int c = 0;
+        boolean bandera = false;
+        boolean var_P = false;
+        boolean var_Q = false;
+        boolean var_R = false;
+        for (Lexico le : lista) {
+            if (le.getToken() == AFD.VARIABLE_A) {
+                var_P = true;
+            } else if (le.getToken() == AFD.VARIABLE_B) {
+                var_Q = true;
+            } else if (le.getToken() == AFD.VARIABLE_C) {
+                var_R = true;
             }
 
-            if(errorLexico){
-                        JOptionPane.showMessageDialog(this, "No se puede resolver porque\n "
-                                +"existe un error Lexico","Logic Table: ERROR LEXICO", JOptionPane.ERROR_MESSAGE);
-                       tablaVerdad.setModel(new DefaultTableModel(
-                                new String[1][1],
-                                new String []{"?","?","?"}
-                        ));
+            if (le.getToken() == AFD.EOF) {
+                bandera = true;
+            }
+        }
+        if (var_P && var_Q && var_R) {
+            c = 3;
+        } else if ((var_P && var_Q) || (var_P && var_R) || var_Q && var_R) {
+            c = 2;
+        } else if (var_P || var_Q || var_R) {
+            c = 1;
+        }
 
+
+        lblVariables.setText("" + c);
+
+        if (bandera) {
+            lblError.setBorder(new LineBorder(Color.RED, 10, true));
+            lblErrorTitulo.setText("Error:");
+        } else {
+            if (AnalizadorSintactico.comprobarSintaxis(lista)) {
+                lblError.setBorder(new LineBorder(Color.GREEN, 10, true));
+                lblErrorTitulo.setText("Correcto:");
             } else {
-                if(AnalizadorSintactico.comprobarSintaxis(lista)){
-                    AnalizadorSemantico analSeman=new AnalizadorSemantico(lista);
-                    TablaVerdad tablaVerdad1=analSeman.valoresTabla();
-                       tablaVerdad.setModel(new DefaultTableModel(
-                        tablaVerdad1.getTablaValor(),
-                        tablaVerdad1.getVariables()
-                    ));
-                }
-                else{
-                        JOptionPane.showMessageDialog(this, "No se puede resolver porque\n "
-                                +"existe un error de sintaxis","Logic Table: ERROR DE SINTAXIS", JOptionPane.ERROR_MESSAGE);
-                         tablaVerdad.setModel(new DefaultTableModel(
-                                new String[1][1],
-                                new String []{"?","?","?"}
-                        ));
-                }
+                lblError.setBorder(new LineBorder(Color.RED, 10, true));
+                lblErrorTitulo.setText("Error:");
             }
+
+        }
     }
 
+    private void sintaxis() {
+        analizadorLexico.crearTokens(txtEntrada.getText());
+        List<Lexico> lista = analizadorLexico.getLexicos();
+        boolean errorLexico = false;
+        for (Lexico lex : lista) {
+            if (lex.getToken() == AFD.EOF) {
+                errorLexico = true;
+            }
+        }
 
+        if (errorLexico) {
+            JOptionPane.showMessageDialog(this, "No se puede resolver porque\n " + "existe un error Lexico", "Logic Table: ERROR LEXICO", JOptionPane.ERROR_MESSAGE);
+            tablaVerdad.setModel(new DefaultTableModel(
+                    new String[1][1],
+                    new String[]{"?", "?", "?"}));
+
+        } else {
+            if (AnalizadorSintactico.comprobarSintaxis(lista)) {
+                AnalizadorSemantico analSeman = new AnalizadorSemantico(lista);
+                TablaVerdad tablaVerdad1 = analSeman.valoresTabla();
+                tablaVerdad.setModel(new DefaultTableModel(
+                        tablaVerdad1.getTablaValor(),
+                        tablaVerdad1.getVariables()));
+            } else {
+                JOptionPane.showMessageDialog(this, "No se puede resolver porque\n " + "existe un error de sintaxis", "Logic Table: ERROR DE SINTAXIS", JOptionPane.ERROR_MESSAGE);
+                tablaVerdad.setModel(new DefaultTableModel(
+                        new String[1][1],
+                        new String[]{"?", "?", "?"}));
+            }
+        }
+    }
 
     private void btnResolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResolverActionPerformed
-            
-            sintaxis();
+
+        sintaxis();
     }//GEN-LAST:event_btnResolverActionPerformed
 
     private void txtEntradaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntradaKeyPressed
-            if(KeyEvent.VK_ENTER==evt.getKeyCode()){
-                    evt.consume();
-            }
+        if (KeyEvent.VK_ENTER == evt.getKeyCode()) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtEntradaKeyPressed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnResolver;
     private javax.swing.JButton jButton2;
@@ -560,7 +606,7 @@ public class PnlPrincipal extends javax.swing.JPanel {
     private javax.swing.JTable tablaVerdad;
     private javax.swing.JTextPane txtEntrada;
     // End of variables declaration//GEN-END:variables
-    private AnalizadorLexico analizadorLexico=new AnalizadorLexico();
+    private AnalizadorLexico analizadorLexico = new AnalizadorLexico();
     private String proposicion;
     private String nombre;
 }
