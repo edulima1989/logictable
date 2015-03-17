@@ -1,0 +1,1 @@
+El proyecto incluye la implementación de un análisis léxico, sintáctico y semántico. La aplicación consiste en resolver ejercicios del álgebra proposicional
